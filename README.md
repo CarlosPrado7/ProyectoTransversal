@@ -1,4 +1,3 @@
-# ProyectoTransversal
 # Proyecto Pescador
 
 Este proyecto es un juego interactivo de pescador donde los jugadores apuestan monedas, siguen un multiplicador y tienen la oportunidad de ganar más monedas. Los jugadores pueden ver un pez moviéndose y un tiburón aparecer, añadiendo emoción al juego.
