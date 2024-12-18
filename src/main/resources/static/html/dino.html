@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pescador</title>
+    <link rel="stylesheet" href="/css/cssDino/dino.css">
+    <link rel="icon" href="/assets/imgDino/barraNavegacion.png" type="image/icon type">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    
+    <audio id="musica" autoplay loop>
+        <source src="/assets/imgDino/musicaFondo.mp3" type="audio/mpeg">
+    </audio>
+
+    <section id="header" class="header">
+        <div id="volverPag" class="volverPag">
+          <a href="/">
+            <img src="/assets/imgDino/hause.png" alt="Casa">
+          </a>
+        </div>
+
+        <div id="reloj"></div>
+      
+        <div id="menu" class="menu">
+          <img src="/assets/imgDino/menu.png" alt="Menu" id="menu-icon">
+          <!-- Contenido del menú -->
+          <div class="menu-content">
+            <span><img src="/assets/imgDino/volumen.png" alt="Volumen" id="controlVolumen"></span>
+            <span><img src="/assets/imgDino/espana.png" alt="Idioma"></span>
+            <span><img src="/assets/imgDino/pantalla-completa.png" alt="Pantalla completa" id="pantallaCompleta"></span>
+            <span><img src="/assets/imgDino/blancoNegro.png" alt="Blanco y Negro" id="blanco-negro"></span>
+          </div>
+        </div>
+      </section>
+
+    <section id="body" class="body">
+        
+        <p id="multiplicador" class="multiplicador">x1.00</p>
+        
+        <div id="historial" class="historial">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+        
+        <img src="/assets/imgDino/PEZ.png" alt="Pez" id="pez">
+        
+    </section>
+
+    <section id="footer" class="footer">
+
+        <div id="monedasJuego" class="monedasJuego">
+
+            <div class="wrapper">
+                <button id="ingresarMonedas">
+                  Ingresar Monedas
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            <div id="infoMonedas">
+              <h3 id="titulo">Monedas:</h3>
+              <p id="monedas"></p>
+            </div>
+            <div class="wrapper">
+                <button id="abrirModalRetirar">
+                  Retirar Monedas
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+
+        </div>
+
+        <div id="apuestaInfo" class="apuestaInfo">
+            <h3 id="apuestaTit">Apuesta:</h3>
+            <p id="apostado">0</p>
+        </div>
+
+        <div id="btnJuego" class="btnJuego">
+            <img src="/assets/imgDino/bajarApuesta.png" alt="Bajar Apuesta" id="bajarApuesta">
+            <img src="/assets/imgDino/jugar.png" alt="Jugar" id="jugar">
+            <img src="/assets/imgDino/subirApuesta.png" alt="Subir Apuesta" id="subirApuesta">
+        </div>
+
+        <div id="saldoJuego" class="saldoJuego">
+            <h3 id="dinero">Saldo:</h3>
+            <p id="cantidad" class="cantidad"></p>
+        </div>
+
+        <div id="informacion" class="informacion">
+            <img src="/assets/imgDino/info.png" alt="Informacion" id="info">
+        </div>
+
+    </section> 
+
+     <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+        <img src="/assets/imgDino/tituloModal.png" alt="Titulo" id="imgTitulo">
+        <p>
+            Haz clic en <img src="/assets/imgDino/jugar.png" alt="Jugar"> para iniciar el juego, luego el multiplicador empezará a crecer y el pez 
+            iniciará el movimiento. Cuanto más aguantes sin retirar el dinero más premio obtendrás
+        <p><strong>Juegue con responsabilidad.</strong></p>
+        <img src="/assets/imgDino/fotoModal.png" alt="Good Luck">
+        <button id="closeButton">Close</button>
+        </div>
+    </div>
+
+    <!--Modal ingresar monedas-->
+    <div id="modalIngresar" class="modalIngresar">
+      <div class="contenidoModal">
+        <h3>Convertir a Monedas</h3>
+        <span id="cerrarIngresar" class="cerrarIngresar">&times;</span>
+        <h2>¿Cuanto quieres convertir?</h2>
+        <input type="number" id="inputIngresar" placeholder="Dinero" min="0" step="0.01">
+        <button id="convertirMonedas">Convertir</button>
+      </div>
+    </div>
+
+    <!--Modal retirar monedas-->
+    <div id="modalRetirar" class="modalRetirar">
+      <div class="contenidoModalRetirar">
+        <h3>Retirar Monedas</h3>
+        <span id="cerrarModalRetirar" class="cerrarModalRetirar">&times;</span>
+        <h2>¿Cuanto quieres retirar?</h2>
+        <input type="number" id="inputCantidadRetirar" placeholder="Dinero" min="0" step="0.01">
+        <button id="realizarRetiro">Retirar</button>
+      </div>
+    </div>
+
+    <script src="/js/jsDino/funcionalidad.js"></script>
+
+</body>
+</html>

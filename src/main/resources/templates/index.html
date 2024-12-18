@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Principal</title>
+    <link rel="icon" href="/assets/imgPagPrincipal/logoDefinitivo.png" type="image/icon type">
+    <link rel="stylesheet" href="/css/cssPagPrincipal/paginaPrincipal.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+    <div id="fondo">
+        <img src="/assets/imgPagPrincipal/fondoPrincipal.png">
+    </div>
+    
+    <header>
+
+        <div id="head">
+            <img src="/assets/imgPagPrincipal/logoDefinitivo.png" id="logo">
+            <h3>Golden Depths</h3>
+        </div>
+
+        <div id="principal">
+            <div id="saldoPagina">
+                <p>Tu Saldo:<span id="saldo" class="saldo"></span></p>
+            </div>
+            <div id="imagenes">
+                <img src="/assets/imgPagPrincipal/mas.png" id="sumarDinero" alt="Añadir dinero">
+                <img src="/assets/imgPagPrincipal/retirarDinero.png" id="retirarDineroSaldo" alt="Retirar dinero">
+            </div>
+        </div>
+
+        <!--Modal para añadir dinero-->
+        <div id="modalAniadir" class="modalAniadir">
+            <div class="modal-aniadir">
+                <span id="closeModalAniadir" class="closeModalAniadir">&times;</span>
+                <h2>Introduce dinero</h2>
+                <input type="number" id="inputDinero" placeholder="Dinero" min="0" step="0.01">
+                <button id="guardarDinero">Guardar</button>
+            </div>
+        </div>
+
+        <!--Modal retirar dinero-->
+        <div id="modalRetirar" class="modalRetirar">
+            <div class="modal-retirar">
+                <span id="closeModalRetirar" class="closeModalRetirar">&times;</span>
+                <h2>¿Cuanto quieres retirar?</h2>
+                <input type="number" id="inputRetirar" placeholder="Dinero" min="0" step="0.01">
+                <button id="retirarDinero">Retirar</button>
+            </div>
+        </div>
+
+        <div id="reloj"></div>
+
+    </header>
+
+    <body>
+
+        <div class="home">
+            <div class="rulet carousel">
+                <div class="carousel-items">
+                    <div class="carousel-item">
+                        <a href="./../tragaperras/tragaperras.html">
+                            <img src="/assets/imgPagPrincipal/ruleta.jpeg" alt="Imagen1" class="img">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="./../tragaperras/tragaperras.html">
+                            <img src="/assets/imgPagPrincipal/ruleta2.jpeg" alt="Imagen2" class="img">
+                        </a>
+                    </div>
+                </div>
+                <ul class="puntos">
+                    <li class="punto activo"></li>
+                    <li class="punto"></li>
+                </ul>
+            </div>
+        
+            <div class="slots carousel">
+                <div class="carousel-items">
+                    <div class="carousel-item">
+                        <a href="./../tragaperras/tragaperras.html">
+                            <img src="/assets/imgPagPrincipal/tragaperras.jpeg" alt="Imagen1" class="img">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="./../tragaperras/tragaperras.html">
+                            <img src="/assets/imgPagPrincipal/tragaperras2.jpeg" alt="Imagen2" class="img">
+                        </a>
+                    </div>
+                </div>
+                <ul class="puntos">
+                    <li class="punto activo"></li>
+                    <li class="punto"></li>
+                </ul>
+            </div>
+        
+            <div class="dino carousel">
+                <div class="carousel-items">
+                    <div class="carousel-item">
+                        <a href="/html/dino.html">
+                            <img src="/assets/imgPagPrincipal/pez2.jpeg" alt="Imagen1" class="img">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="/html/dino.html">
+                            <img src="/assets/imgPagPrincipal/pez.jpeg" alt="Imagen2" class="img">
+                        </a>
+                    </div>
+                </div>
+                <ul class="puntos">
+                    <li class="punto activo"></li>
+                    <li class="punto"></li>
+                </ul>
+            </div>
+        </div>
+        
+
+    </body>
+
+    <footer>
+            <div id="redes">
+                <img src="/assets/imgPagPrincipal/appstore.png" class="apple">
+                <img src="/assets/imgPagPrincipal/androidstore.png" class="android">
+                <img src="/assets/imgPagPrincipal/instagram.png" class="instagram">
+                <img src="/assets/imgPagPrincipal/twitter.png" class="twitter">
+                <img src="/assets/imgPagPrincipal/facebook.png" class="facebook">
+            </div>
+            
+        <div id="contenidoPrincipal">
+
+            <div id="sobreNosotros">
+                <h3 id="titulo">Sobre Nosotros</h3>
+                <p id="texto">Juego más seguro</p>
+                <p id="texto">Juego Autorizado</p>
+                <p id="texto">Contrato</p>
+                <p id="texto">Reglas</p>
+                <p id="texto">Protección de Datos Jugadores</p>
+                <p id="texto">Política de cookies</p>
+                <p id="texto">Política de Privacidad</p>
+            </div>
+
+            <div id="linkDestacados">
+                <h3 id="titulo">Links Destacados</h3>
+                <p id="texto">Descarga App</p>
+                <p id="texto">Resultados y estadísticas</p>
+                <p id="texto">Tragaperras</p>
+                <p id="texto">Pesca en vivo</p>
+            </div>
+
+            <div id="ayuda">
+                <h3 id="titulo">Ayuda</h3>
+                <p id="texto">Ayuda</p>
+                <p id="texto">Proteccion de datos web</p>
+                <p id="texto">Contacta</p>
+            </div>
+
+        </div>  
+
+            <div id="metodosPago">
+                <img src="/assets/imgPagPrincipal/paypal.png" class="paypal">
+                <img src="/assets/imgPagPrincipal/bizum.png" class="bizum">
+                <img src="/assets/imgPagPrincipal/mastercard.png" class="mastercard">
+                <img src="/assets/imgPagPrincipal/pagoCasino.jpeg" class="pagoCasino">
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="/js/jsPagPrincipal/paginaPrincipal.js"></script>
+
+</body>
+</html>
