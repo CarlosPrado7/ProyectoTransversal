@@ -749,3 +749,84 @@ button:hover span:nth-child(4) {
 .cerrarModalRetirar:hover {
   color: #ffcc00;
 }
+
+/* Estilos para el modal ganador */
+/* Estilos para el modal */
+.modal {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con mayor opacidad */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+}
+
+/* Estilo del contenido del modal */
+.modal-contenido {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 85%;
+  max-width: 450px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transform: scale(0.9); /* Inicia un poco más pequeño para un efecto de aparición */
+  animation: modalAparecer 0.4s ease-out forwards; /* Animación de aparición */
+}
+
+/* Animación para la aparición del modal */
+@keyframes modalAparecer {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Estilos para el mensaje principal del modal */
+.modal-contenido h2 {
+  font-size: 2rem;
+  color: #ffcc00;
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el mensaje del ganador */
+#mensajeGanador {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* Estilo para el botón de cerrar */
+#cerrarModal {
+  padding: 12px 25px;
+  background-color: #ffcc00; 
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+#cerrarModal:hover {
+  background-color: #e6b800; 
+  transform: scale(1.05); 
+}
+
+/* Efecto al hacer clic en el botón */
+#cerrarModal:active {
+  transform: scale(0.98); 
+}
+

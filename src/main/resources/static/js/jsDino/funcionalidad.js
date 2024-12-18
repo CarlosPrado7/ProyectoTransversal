@@ -328,16 +328,38 @@ function reiniciar () {
       pezAnimado.src = "/assets/imgDino/PEZ.png";
       btnJugar.src = "/assets/imgDino/jugar.png";
       apuestaActual = 0;
+      apuestaDisplay.innerHTML = apuestaActual; 
     },2000);
   }
 
+}
+
+// Función para mostrar el modal de ganador
+function mostrarModalGanador(ganancia) {
+  // Mostrar el modal
+  const modal = document.getElementById('modalGanador');
+  const multiplicadorGanador = document.getElementById('multiplicadorGanador');
+  const mensajeGanador = document.getElementById('mensajeGanador');
+
+  // Mostrar el multiplicador y la ganancia
+  multiplicadorGanador.textContent = ganancia.toFixed(2);
+  mensajeGanador.textContent = `Has ganado ${ganancia.toFixed(2)} monedas!`;
+
+  // Mostrar el modal
+  modal.style.display = 'flex';
+
+  // Cerrar el modal cuando el jugador haga clic en el botón
+  document.getElementById('cerrarModal').addEventListener('click', () => {
+    modal.style.display = 'none'; // Ocultar el modal
+  });
 }
 
 // Evento para iniciar al hacer clic en el botón
 botonJugar.addEventListener("click", () => {
 
   if(botonJugar.src.split('/').pop() === "jugar.png") {
-    //Cambiar fondo con movimientos y iconos
+    if(apuestaActual > 0){
+      //Cambiar fondo con movimientos y iconos
     document.body.style.backgroundImage = "url('/assets/imgDino/fondoAnimado.gif')";
     pezAnimado.src = "/assets/imgDino/pezAnimado.gif";
     btnJugar.src = "/assets/imgDino/jugando.png";
@@ -347,12 +369,14 @@ botonJugar.addEventListener("click", () => {
     multiplicadorElement.textContent = `x${multiplicador.toFixed(2)}`; 
     clearTimeout(intervalo); 
     actualizarMultiplicador(); 
+    }
+    
   }else if(botonJugar.src.split('/').pop() === "jugando.png") {
     reiniciar();
     totalMonedas += apuestaActual * multiplicador;
     pMonedas.innerHTML = totalMonedas;
+    mostrarModalGanador(apuestaActual * multiplicador);
     clearTimeout(intervalo);
-    window.alert("HOLA");
   }
 
 });
