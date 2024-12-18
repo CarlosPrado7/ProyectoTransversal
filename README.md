@@ -29,7 +29,7 @@ Sigue estos pasos para clonar el proyecto y hacerlo funcionar en tu máquina loc
 
 1. Clona este repositorio:
     ```bash
-    git clone https://github.com/tu-usuario/pescador.git
+    https://github.com/CarlosPrado7/ProyectoTransversal.git
     ```
 
 2. Asegúrate de tener un servidor local (como [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) en Visual Studio Code o cualquier otro que prefieras) para ejecutar el proyecto correctamente.
