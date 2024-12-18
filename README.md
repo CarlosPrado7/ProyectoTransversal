@@ -36,11 +36,6 @@ Sigue estos pasos para clonar el proyecto y hacerlo funcionar en tu máquina loc
 
 3. Una vez que tengas el servidor funcionando, abre el archivo `index.html` en tu navegador.
 
-## Estructura del Proyecto
-
-La estructura del proyecto es la siguiente:
-pescador/ │ ├── assets/ │ └── imgDino/ # Imágenes y recursos del juego │ ├── fondoAnimado.gif # Fondo animado del juego │ ├── pezAnimado.gif # Animación del pez │ ├── tiburon.png # Imagen del tiburón │ └── ... # Otros recursos como iconos y música │ ├── css/ │ └── cssDino/ # Archivos CSS para los estilos │ └── dino.css # Estilos principales del juego │ ├── js/ │ └── jsDino/ # Archivos JavaScript │ └── funcionalidad.js # Lógica y funcionalidad del juego │ ├── index.html # Página principal del juego └── README.md # Este archivo
-
 ## Uso
 
 1. **Iniciar el Juego**: Al presionar el botón "Jugar", el multiplicador comienza a aumentar, y el pez se mueve. El tiburón aparece después de cierto tiempo.
