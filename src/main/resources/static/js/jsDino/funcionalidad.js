@@ -131,47 +131,6 @@ pantallaCompleta.addEventListener('click', () => {
      musicaActiva = !musicaActiva;
  });
 
-// Elementos del DOM
-const multiplicadorElement = document.getElementById("multiplicador");
-const botonJugar = document.getElementById("jugar");
-
-// Variables del juego
-let multiplicador = 1.00;
-let velocidad = 100; 
-let incremento = 0.01;
-let intervalo;
-
-// Función para actualizar el multiplicador con detención aleatoria
-function actualizarMultiplicador() {
-    if (multiplicador < 10) {
-        
-        multiplicador = parseFloat((multiplicador + incremento).toFixed(2));
-        multiplicadorElement.textContent = `x${multiplicador.toFixed(2)}`;
-
-        const probabilidad = Math.random(); 
-        if (probabilidad < 0.03) {
-            alert(`¡Juego detenido! Multiplicador final: x${multiplicador.toFixed(2)}`);
-            clearTimeout(intervalo);
-            return;
-        }
-
-        // Continuar actualizando el multiplicador
-        intervalo = setTimeout(actualizarMultiplicador, velocidad);
-    } else {
-        alert(`¡Máximo alcanzado! Multiplicador: x${multiplicador.toFixed(2)}`);
-        clearTimeout(intervalo);
-    }
-}
-
-// Evento para iniciar al hacer clic en el botón
-botonJugar.addEventListener("click", () => {
-    multiplicador = 1.00; 
-    multiplicadorElement.textContent = `x${multiplicador.toFixed(2)}`; 
-    clearTimeout(intervalo); 
-    actualizarMultiplicador(); 
-});
-
-
 var pSaldo = document.getElementById('saldo'); 
 var pMonedas = document.getElementById('monedas'); 
 let totalMonedas = 0; 
@@ -314,17 +273,88 @@ btnRealizarRetiro.addEventListener('click', () => {
   const pezAnimado = document.getElementById('pez');
   let jugando = false;
 
-  // Manejar jugar
-  btnJugar.addEventListener("click", () => {
+// Elementos del DOM
+const multiplicadorElement = document.getElementById("multiplicador");
+const botonJugar = document.getElementById("jugar");
 
-    jugando = true;
+// Variables del juego
+let multiplicador = 1.00;
+let velocidad = 100; 
+let incremento = 0.01;
+let intervalo;
+
+// Función para actualizar el multiplicador con detención aleatoria
+function actualizarMultiplicador() {
+    if (multiplicador < 10 && apuestaActual > 20) {
+
+        multiplicador = parseFloat((multiplicador + incremento).toFixed(2));
+        multiplicadorElement.textContent = `x${multiplicador.toFixed(2)}`;
+
+        const probabilidad = Math.random(); 
+
+        if (probabilidad < 0.03) {
+            mostrarImagenTiburon();
+            clearTimeout(intervalo);
+            reiniciar();
+            return;
+        }
+
+        // Continuar actualizando el multiplicador
+        intervalo = setTimeout(actualizarMultiplicador, velocidad);
+
+    } else if(apuestaActual == 0 && apuestaActual == 10) {
+        window.alert("Introduce una apuesta");
+    }
+}
+
+function mostrarImagenTiburon () {
+
+  const contenedor = document.querySelector('.contenedor');
+
+  if(contenedor){
+    contenedor.classList.add('mostrar-tiburon');
+  }
+
+}
+
+function reiniciar () {
+
+  const contenedor = document.querySelector('.contenedor');
+
+  if(contenedor){
+    setTimeout(() => {
+      contenedor.classList.remove('mostrar-tiburon');
+      document.body.style.backgroundImage = "url('/assets/imgDino/fondo.jpeg')";
+      pezAnimado.src = "/assets/imgDino/PEZ.png";
+      btnJugar.src = "/assets/imgDino/jugar.png";
+      apuestaActual = 0;
+    },2000);
+  }
+
+}
+
+// Evento para iniciar al hacer clic en el botón
+botonJugar.addEventListener("click", () => {
+
+  if(botonJugar.src.split('/').pop() === "jugar.png") {
+    //Cambiar fondo con movimientos y iconos
     document.body.style.backgroundImage = "url('/assets/imgDino/fondoAnimado.gif')";
     pezAnimado.src = "/assets/imgDino/pezAnimado.gif";
     btnJugar.src = "/assets/imgDino/jugando.png";
+    
+    //Inicia el multi y lo termina
+    multiplicador = 1.00; 
+    multiplicadorElement.textContent = `x${multiplicador.toFixed(2)}`; 
+    clearTimeout(intervalo); 
+    actualizarMultiplicador(); 
+  }else if(botonJugar.src.split('/').pop() === "jugando.png") {
+    reiniciar();
+    totalMonedas += apuestaActual * multiplicador;
+    pMonedas.innerHTML = totalMonedas;
+    clearTimeout(intervalo);
+    window.alert("HOLA");
+  }
 
-
-
-  });
-
+});
 
 

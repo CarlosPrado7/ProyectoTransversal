@@ -210,12 +210,39 @@ body {
   text-align: center; 
 }
 
+.contenedor {
+  position: relative;
+  display: inline-block;
+}
 
 #pez {
   width: 150px;
   margin-top: 20px;
   max-width: 100%;
   height: auto;
+}
+
+#imagenTiburon {
+  width: 170px;
+  display: none;
+  position: absolute;
+  top: 50%; 
+  left: -220px;
+  transform: translateY(-50%); 
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+.mostrar-tiburon #imagenTiburon {
+  display: block;
+  opacity: 1;
+  transform: translateY(-50%) translateX(20px);
+}
+
+/* Clase para desaparecer el pez */
+.mostrar-tiburon #pez {
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 /* Footer principal */
